@@ -82,12 +82,15 @@ import numpy as np
 ages = np.array([[13,53,52,23,68,97,83],
                 [15,73,92,64,18,19,17]])
 teenagers = ages[ages <18]
-adults = ages[(ages >=18) & (ages <65)]   #₹() & ()
-SeniorCitizens = ages[ages >=65]
-even = ages[ages %2 ==0]
-print(teenagers)
-print(adults)
-print(SeniorCitizens)
-print(even) 
+# adults = ages[(ages >=18) & (ages <65)]   #₹() & ()
+# SeniorCitizens = ages[ages >=65]
+# even = ages[ages %2 ==0]
+# print(teenagers)
+# print(adults)
+# print(SeniorCitizens)
+# print(even) 
 # print(ages[0, ages[0,:] < 18])  #first row, all columns where age <18
 # print(ages[1, ages[1,:] < 18])  #second row, all columns where age <18
+
+adults = np.where(ages >=18 , ages, 0) #if condition true, keep age else replace with 0
+print(adults)
